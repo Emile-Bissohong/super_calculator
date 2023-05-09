@@ -5,7 +5,7 @@ updates:
     schedule:
       interval: "daily"
 
-  - package-ecosystem: "go n"
+  - package-ecosystem: "gomod"
     directory: "/"
     schedule:
       interval: "daily"
