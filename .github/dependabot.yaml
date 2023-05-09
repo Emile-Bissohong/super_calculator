@@ -5,7 +5,7 @@ updates:
     schedule:
       intervale; "daily"
 
-  - package-ecosystem: "go"
+  - package-ecosystem: "go n"
     directory; "/"
     schedule:
       interval: "daily"
