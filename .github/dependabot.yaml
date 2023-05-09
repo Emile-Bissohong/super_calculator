@@ -1,0 +1,11 @@
+version: 2
+updates:
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      intervale; "daily"
+
+  - package-ecosystem: "go"
+    directory; "/"
+    schedule:
+      interval: "daily"
