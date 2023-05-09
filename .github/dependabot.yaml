@@ -6,6 +6,6 @@ updates:
       intervale; "daily"
 
   - package-ecosystem: "go n"
-    directory; "/"
+    directory: "/"
     schedule:
       interval: "daily"
