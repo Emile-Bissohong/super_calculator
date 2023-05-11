@@ -1,0 +1,30 @@
+name: Lint Workflow
+
+on:
+  pull_request:
+  push:
+  workflow_dispatch:
+jobs:
+  Lint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: checkout
+      uses: actions/checkout@v3
+
+    - name: Semgrep Analysis
+      uses: returntocorp/semgrep-action@v1
+      with:
+        config: "p/default"
+
+    - name: Hadolint Analysis
+      uses: hadolint/hadolint-action@v3.1.0
+      with:
+        dockerfile: Dockerfile
+
+    - name: Pull Request Super-linter
+      if: ${{ github.event_name == 'pull_request' }}
+      uses: github/super-linter/slim@v5
+      env:
+        VALIDATE_ALL_CODEBASE: true
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
